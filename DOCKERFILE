@@ -8,7 +8,6 @@ ENV MAGENTO_HOME "/var/www/html"
 ENV PATH "$MAGENTO_HOME/bin":$PATH
 
 RUN apt-get update \
-
     # ------------	
 	# 1. magento ce
 	# ------------
