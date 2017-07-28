@@ -1,11 +1,14 @@
 FROM prashanthmadi/appservice-nginx-php-fpm:latest
 
+ENV DOCKER_BUILD_HOME "/dockerbuild"
 # magento ce
 ENV MAGENTO_VERSION "2.1.5"
 ENV MAGENTO_PACKAGE "Magento-CE-$MAGENTO_VERSION.tar.gz"
 ENV MAGENTO_SOURCE "/usr/src/magento"
 ENV MAGENTO_HOME "/var/www/html"
 ENV PATH "$MAGENTO_HOME/bin":$PATH
+
+COPY $MAGENTO_PACKAGE $DOCKER_BUILD_HOME/
 
 RUN apt-get update \
     # ------------	
